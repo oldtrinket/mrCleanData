@@ -1,5 +1,3 @@
-# mrCleanData
-
 # Mr Clean Data
 
 **Mr Clean Data** is a Python application designed to analyze datasets in CSV or XLSX format to identify if they require cleaning. The core functionality includes:
