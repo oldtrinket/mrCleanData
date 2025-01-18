@@ -18,3 +18,14 @@ def analyze_file(file_path):
             if df[col].apply(type).nunique() > 1:
                 inconsistent_types = True
                 break
+
+# Check for duplicates
+        duplicates = df.duplicated().any()
+
+        # Check for outliers (simple example using z-score for numeric columns)
+        numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
+        if numeric_cols.any():
+            z_scores = df[numeric_cols].apply(lambda x: (x - x.mean()) / x.std())
+            outliers = (z_scores.abs() > 3).any().any()
+        else:
+            outliers = False
