@@ -29,3 +29,16 @@ def analyze_file(file_path):
             outliers = (z_scores.abs() > 3).any().any()
         else:
             outliers = False
+
+# Summary of checks
+        summary = {
+            "Missing Data": missing_data,
+            "Inconsistent Types": inconsistent_types,
+            "Duplicates": duplicates,
+            "Outliers": outliers
+        }
+        
+        return summary
+
+    except Exception as e:
+        return f"An error occurred: {str(e)}"
