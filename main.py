@@ -19,7 +19,7 @@ def analyze_file(file_path):
                 inconsistent_types = True
                 break
 
-# Check for duplicates
+        # Check for duplicates
         duplicates = df.duplicated().any()
 
         # Check for outliers (simple example using z-score for numeric columns)
@@ -30,7 +30,7 @@ def analyze_file(file_path):
         else:
             outliers = False
 
-# Summary of checks
+        # Summary of checks
         summary = {
             "Missing Data": missing_data,
             "Inconsistent Types": inconsistent_types,
