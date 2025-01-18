@@ -42,3 +42,9 @@ def analyze_file(file_path):
 
     except Exception as e:
         return f"An error occurred: {str(e)}"
+
+
+# Example usage
+file_path = 'path/to/your/data.csv'
+result = analyze_file(file_path)
+print(result)
